@@ -1,12 +1,10 @@
 def no_dups(s):
-    keys_list = []
-    if s == '':
-        return ''
-    lst = s.split(' ')
-    a = dict.fromkeys(lst)
-    for key in a.keys():
-        keys_list.append(key)
-    return ' '.join(keys_list)
+    cache = {}
+
+    for word in s.split():
+        if word not in cache:
+            cache[word]=1
+    return " ".join(cache)
 
 
 
